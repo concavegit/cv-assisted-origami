@@ -1,1 +1,1 @@
-# Origame
+# Origami
