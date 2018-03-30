@@ -1,0 +1,37 @@
+
+#+BEGIN_SRC plantuml :file class_diagram.png :exports results :results file
+  PaperState <|-- ShapeDetect
+  ShapeDetect <|-- FindContours
+  PaperState <|-- ShapeProjection
+
+  class PaperState {
+        currentShape
+  }
+
+  class ShapeDetect {
+        Find the shape in an image, considering rotations.
+        --
+        checkAngles
+        shapePosition
+        drawShape()
+  }
+
+  class InstructionSteps {
+        completedSteps
+        nextStep()
+  }
+
+  class FindContours
+
+  note "Some way to tell the instructions to call nextStep()." as N1
+
+  N1 .. ShapeDetect
+  N1 .. InstructionSteps
+
+  class ShapeProjection {
+        Represents shapes which can be projected onto different planes.
+  }
+#+END_SRC
+
+#+RESULTS:
+[[file:class_diagram.png]]
