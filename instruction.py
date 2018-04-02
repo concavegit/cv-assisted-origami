@@ -23,7 +23,7 @@ class Instruction:
 
         self.currentStep = 0
 
-        files = os.listdir('stepDir')
+        files = os.listdir(stepDir)
         stepRegxp = re.compile('step[0-9]+\.(jpg|png)')
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
         stepFiles = [match.group() for match in stepFiles]
