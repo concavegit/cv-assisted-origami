@@ -8,7 +8,7 @@ We will also implement detection when the shape is not parallel to the camera.
 # Key Questions
 - How to detect which side of the 2D figure is displayed
 - Is there a way to detect folds better?
-- What is an elegant way to keep the state of the paper? Do we use vertices and lines?
+- What is an elegant way to keep the state of the paper which would concern the natural properties and structure of paper while keeping relevant information?
 
 # Agenda
 - Make it clear that we would like feedback after the presention orally if time; in google form otherwise 
