@@ -9,7 +9,7 @@ import os
 import re
 
 
-class Instructions:
+class Instruction:
     def __init__(self, stepDir):
         '''Initialize with a path to the directory containg the images
         sorted in alphabetical order.
