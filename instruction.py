@@ -12,7 +12,7 @@ import re
 class Instruction:
     def __init__(self, stepDir):
         '''Initialize with a path to the directory containg the images
-        sorted in alphabetical order.
+        named step%d.(png|jpg).
         Each image has edges drawn in black (#000000), with the new
         fold in red (#ff0000)
 
