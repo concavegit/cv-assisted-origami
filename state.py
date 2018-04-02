@@ -30,5 +30,5 @@ class Instructions:
         self.steps = [cv2.imread(filepath) for filepath in stepFiles]
 
     def nextStep(self):
-        '''proceed to next step unless all steps are exhausted'''
+        '''Proceed to next step unless all steps are exhausted'''
         self.currentStep += 1 if self.currentStep < len(self.steps) else 0
