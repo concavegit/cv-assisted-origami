@@ -15,15 +15,15 @@ def detect_white(img):
 
 	# define upper and lower ranges for detecting
 	# a white piece of paper
-	lower_white = np.array([0,0,0], dtype=np.uint8)
-	upper_white = np.array([0,0,255], dtype=np.uint8)
+	lower_white = np.array([100,150,0])
+	upper_white = np.array([140,255,255])
 
 	# threshold hsv to get white values only
 	mask = cv2.inRange(hsv, lower_white, upper_white)
 
 	# mask original frame
 	img = cv2.bitwise_and(img, img, mask=mask)
-	return blur
+	return img
 
 def detection(img):
 	im = img
