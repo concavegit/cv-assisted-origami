@@ -9,9 +9,21 @@ Mark, Kevin, Sid
 import cv2
 import numpy as np
 
-lower_white = np.array([0,0,0], dtype=np.uint8)
-upper_white = np.array([0,0,255], dtype=np.uint8)
 
+def detect_white(img):
+	hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+	# define upper and lower ranges for detecting
+	# a white piece of paper
+	lower_white = np.array([0,0,0], dtype=np.uint8)
+	upper_white = np.array([0,0,255], dtype=np.uint8)
+
+	# threshold hsv to get white values only
+	mask = cv2.inRange(hsv, lower_white, upper_white)
+
+	# mask original frame
+	img = cv2.bitwise_and(img, img, mask=mask)
+	return blur
 
 def detection(img):
 	im = img
@@ -32,11 +44,10 @@ def detection(img):
 	#mask = cv2.inRange(imhsv, lower_white, upper_white)
 
 	blur = cv2.GaussianBlur(img,(5,5),0)
-	 
 	# Set threshold and maxValue
 	thresh = 210
 	maxValue = 255
-	 
+
 	# Basic threshold example
 	th, dst = cv2.threshold(img, thresh, maxValue, cv2.THRESH_BINARY);
 
@@ -45,18 +56,16 @@ def detection(img):
 vc = cv2.VideoCapture(0)
 
 if vc.isOpened(): # try to get the first frame
-    rval, frame = vc.read()
-else:
-    rval = False
+    ret, frame = vc.read()
 
-while rval:
+while ret:
 	rval, img = vc.read()
-	img = detection(img)
+	#img = detection(img)
+	img = detect_white(img)
 	cv2.imshow("feed", img)
 	key = cv2.waitKey(20)
 
 	if key == 27:
 		break
-    
-cv2.destroyWindow("feed")
 
+cv2.destroyWindow("feed")
