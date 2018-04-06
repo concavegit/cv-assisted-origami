@@ -27,7 +27,8 @@ class Instruction:
         stepRegxp = re.compile('step[0-9]+\.(jpg|png)')
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
         stepFiles = [match.group() for match in stepFiles]
-        self.steps = [cv2.imread(filepath) for filepath in stepFiles]
+        self.steps = [cv2.imread(stepDir + '/' + filepath)
+                      for filepath in stepFiles]
 
     def nextStep(self):
         '''Proceed to next step unless all steps are exhausted'''
