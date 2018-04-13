@@ -1,7 +1,6 @@
 @startuml
 OverlayInstruction <|-- Instruction
 OverlayInstruction <|-- DetectPaper
-PaperState <|-- ShapeProjection
 
 class Instruction {
 Generates a list of images of instructions to be overlayed.
