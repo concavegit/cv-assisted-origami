@@ -33,3 +33,9 @@ class OverlayInstruction:
 
         # Color representation of instruction
         self.instruction = whiteBack
+
+    def sortVertices(self):
+        n = self.vertices.shape[0]
+        centroid = self.vertices.mean(0)
+        d = self.vertices - centroid
+        cornersWith

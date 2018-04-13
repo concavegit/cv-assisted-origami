@@ -1,0 +1,27 @@
+@startuml
+OverlayInstruction <|-- Instruction
+OverlayInstruction <|-- DetectPaper
+PaperState <|-- ShapeProjection
+
+class Instruction {
+Generates a list of images of instructions to be overlayed.
+It also keeps track of the current step.
+--
+currentStep
+steps
+nextStep()
+}
+
+class OverlayInstruction {
+Overlays the current instruction on the detected paper by scaling and
+coinciding moments based off the outlines of some shapes.
+--
+outline
+moment
+overlay()
+}
+
+class DetectPaper {
+detection()
+}
+@enduml
