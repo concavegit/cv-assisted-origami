@@ -20,13 +20,15 @@ Modes:
 
 1. Unassisted: Minimum Viability
 
-  To begin, execute the fold instructions as they are displayed on-screen. Confirm fold completion and repeat until the final instruction is reached.
+    To begin, execute the fold instructions as they are displayed on-screen. Confirm fold completion and repeat until the final instruction is reached.
+
 2. Assisted
 
-  To begin receiving valid webcam input, find a surface that contrasts highly with the paper being folded, and position the webcam above it. Starting from the first instruction, continue folding the paper as instructions appear on-screen.
+    To begin receiving valid webcam input, find a surface that contrasts highly with the paper being folded, and position the webcam above it. Starting from the first instruction, continue folding the paper as instructions appear on-screen.
+
 3. Augmented: Stretch
 
-  Follow the instructions described in (2), but fold across the line that is projected over the paper on-screen. Continue folding over new lines as they appear on the paper until lines are no longer visible.
+    Follow the instructions described in (2), but fold across the line that is projected over the paper on-screen. Continue folding over new lines as they appear on the paper until lines are no longer visible.
 
 ## Contribution guidelines:
 
