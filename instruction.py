@@ -42,6 +42,9 @@ class projectInstruction(Instruction):
         super().__init__(stepDir)
 
     def overlayInstructions(self, frame):
+        """(Still in progress) going to put a picture
+        of instructions in upper left of camera (super MVP)"""
+    
         img = Image.open(self.steps[1])
         img = img.thumbnail((480,640), Image.ANTIALIAS)
         rows, cols, channels = img.shape
@@ -53,10 +56,8 @@ class projectInstruction(Instruction):
         cv2.imshow("mask", mask_inv)
         img_b = cv2.bitwise_and(roi, roi, mask = mask_inv)
         return frame
-        
+
 i = projectInstruction('sample')
-#cv2.imshow("help", i.steps[1])
-print(len(i.steps))
 
 cap = cv2.VideoCapture(0)
 while(True):
