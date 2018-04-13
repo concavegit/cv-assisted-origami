@@ -32,8 +32,8 @@ Modes:
 
 ## Contribution guidelines:
 
-This repository can be easily forked and contributed to on Github. To suggest new changes, please submit a pull request.
+This repository can be easily forked and contributed to on Github. To suggest new changes, please submit a [pull request](https://github.com/concavegit/cv-assisted-origami/pulls).
 
 ## Questions/Concerns:
 
-To report any bugs/issues, open a new issue under the repository.
+To report any bugs/issues, open a new [issue](https://github.com/concavegit/cv-assisted-origami/issues) under the repository.
