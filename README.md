@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)
 
-![demo](/PaperPics/testresult.png)
+![demo](PaperPics/testresult.png)
 
 A program that uses webcam input to visually assist users with origami folds for a given flat construction.
 
