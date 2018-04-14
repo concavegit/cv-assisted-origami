@@ -8,7 +8,6 @@ import cv2
 import os
 import re
 import numpy as np
-from PIL import Image
 
 
 class Instruction(object):
@@ -36,35 +35,31 @@ class Instruction(object):
         self.currentStep += 1 if self.currentStep < len(self.steps) else 0
 
 class projectInstruction(Instruction):
-    """ This class will fetch an instruction and project in onto the origami paper in real time"""
+    """ This class will fetch an instruction and project it into the upper left corner or into the paper
+    (currently only does upper left)"""
+
     # Find centroid AND THEN scale image as well as centroid
     def __init__(self, stepDir):
         super().__init__(stepDir)
 
     def overlayInstructions(self, frame):
-        """(Still in progress) going to put a picture
-        of instructions in upper left of camera (super MVP)"""
-    
-        img = Image.open(self.steps[1])
-        img = img.thumbnail((480,640), Image.ANTIALIAS)
-        rows, cols, channels = img.shape
-        print(rows, cols)
-        roi = frame[0:rows, 0:cols]
-        img2gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        ret, mask = cv2.threshold(img2gray, 150, 255, cv2.THRESH_BINARY)
-        mask_inv = cv2.bitwise_not(mask)
-        cv2.imshow("mask", mask_inv)
-        img_b = cv2.bitwise_and(roi, roi, mask = mask_inv)
+        """Instruction mode 1: Instructinos displayed in the upper
+        left corner"""
+
+        img = self.steps[1]
+        # scales image down by about a third
+        res = cv2.resize(img, None, fx=0.3, fy=0.3)
+        frame[0:res.shape[0] - 130, 0:res.shape[1] - 30] = res[40:res.shape[0] - 90, 20:res.shape[1] - 10]
         return frame
 
-i = projectInstruction('sample')
-
+i = projectInstruction('CompGenInstructions')
 cap = cv2.VideoCapture(0)
 while(True):
     # Captures fram-by-frame in "frame" and
     # whether there is a frame or not (boolean) in ret
     ret, frame = cap.read()
     frame = i.overlayInstructions(frame)
+    #frame = i.overlayInstructions(frame)
     cv2.imshow('frame', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
