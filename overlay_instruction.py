@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 @author: Kawin Nikomborirak
 @date: 2018/04/13
@@ -16,6 +17,7 @@ class OverlayInstruction:
         - verts: vertices of instruction outline
         - realVerts: vertices of real camera input
         '''
+
         self.alphaToWhite(instruction)
 
         gray = cv2.cvtColor(self.instruction, cv2.COLOR_BGR2GRAY)
@@ -71,6 +73,7 @@ class OverlayInstruction:
         '''
         Use shoelace formula to calculate area
         '''
+
         rolled = np.roll(verts, -1, 0)
         shoelace = verts[:, 0] * rolled[:, 1]\
             - verts[:, 1] * rolled[:, 0]
@@ -80,6 +83,7 @@ class OverlayInstruction:
         '''
         Resize the instruction image to match the area of the real image
         '''
+
         scale = np.sqrt(self.realArea / self.area)
         dim = np.int0(scale * np.float64(self.instruction.shape))[:-1]
         self.scale = scale
@@ -96,9 +100,9 @@ class OverlayInstruction:
         shiftNonNegative[shiftNonNegative < 0] = 0
 
         # pad the instruction according to the real image
-        topPad = shift[0]
+        topPad = shift[1]
         bottomPad = self.real.shape[0] - self.resized.shape[0] - topPad
-        leftPad = shift[1]
+        leftPad = shift[0]
         rightPad = self.real.shape[1] - self.resized.shape[1] - leftPad
         padding = np.reshape(
             [topPad, bottomPad, leftPad, rightPad, 0, 0], (-1, 2))
@@ -132,6 +136,7 @@ class OverlayInstruction:
 
 
 if __name__ == '__main__':
+    # testing
     r = cv2.imread('PaperPics/triangle.jpg')
     x = OverlayInstruction(r, 'CompGenInstructions/step02.png')
     cv2.imshow('y', x.overlayed)
