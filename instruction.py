@@ -1,7 +1,7 @@
 '''
-@author: Kawin Nikomborirak
+@author: Kawin Nikomborirak and Mark Goldwater
 @date: 2018/04/02
-@brief: These classes has keeps track of the paper state.
+@brief: These classes display instructions for the folder
 '''
 
 import cv2
@@ -22,17 +22,23 @@ class Instruction(object):
         steps: A list of images as described above.
         '''
 
-        self.currentStep = 0
+        self.stepOrder = [1, 0, 2, 4, 3]
+        self.stepCounter = 0
+        self.currentStep = self.stepOrder[self.stepCounter]
 
         files = os.listdir(stepDir)
-        stepRegxp = re.compile('step[0-9]+\.(jpg)')
+        stepRegxp = re.compile('Step[1-5]+\.(jpg)')
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
         stepFiles = [match.group() for match in stepFiles]
         self.steps = [cv2.imread(stepDir + '/' + filepath) for filepath in stepFiles]
 
     def nextStep(self):
         '''Proceed to next step unless all steps are exhausted'''
-        self.currentStep += 1 if self.currentStep < len(self.steps) else 0
+        if self.currentStep < len(self.steps):
+            self.stepCounter += 1
+        else:
+            self.stepCounter = 0
+        self.currentStep = self.stepOrder[self.stepCounter]
 
 class projectInstruction(Instruction):
     """ This class will fetch an instruction and project it into the upper left corner or into the paper
@@ -41,28 +47,36 @@ class projectInstruction(Instruction):
     # Find centroid AND THEN scale image as well as centroid
     def __init__(self, stepDir):
         super().__init__(stepDir)
+        self.cap = cv2.VideoCapture(0)
 
     def overlayInstructions(self, frame):
         """Instruction mode 1: Instructinos displayed in the upper
         left corner"""
 
-        img = self.steps[1]
+        img = self.steps[self.currentStep]
         # scales image down by about a third
-        res = cv2.resize(img, None, fx=0.3, fy=0.3)
-        frame[0:res.shape[0] - 130, 0:res.shape[1] - 30] = res[40:res.shape[0] - 90, 20:res.shape[1] - 10]
+        res = cv2.resize(img, None, fx=0.7, fy=0.7)
+        frame[0:res.shape[0], 0:res.shape[1]] = res[0:res.shape[0], 0:res.shape[1]]
         return frame
 
-i = projectInstruction('CompGenInstructions')
-cap = cv2.VideoCapture(0)
-while(True):
-    # Captures fram-by-frame in "frame" and
-    # whether there is a frame or not (boolean) in ret
-    ret, frame = cap.read()
-    frame = i.overlayInstructions(frame)
-    #frame = i.overlayInstructions(frame)
-    cv2.imshow('frame', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-# When everything is done, release the Capture
-cap.release()
-cv2.destroyAllWindows()
+    def projectOntoVideo(self):
+        # Captures fram-by-frame in "frame" and
+        # whether there is a frame or not (boolean) in ret
+        ret, frame = self.cap.read()
+        frame = i.overlayInstructions(frame)
+        #frame = i.overlayInstructions(frame)
+        cv2.imshow('frame', frame)
+
+
+
+if __name__ == "__main__":
+    i = projectInstruction('OrigamiFox')
+    while True:
+        i.projectOntoVideo()
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+        if cv2.waitKey(1) & 0xFF == ord('k'):
+            i.nextStep()
+    # When everything is done, release the Capture
+    i.cap.release()
+    cv2.destroyAllWindows()
