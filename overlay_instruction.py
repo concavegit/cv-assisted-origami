@@ -20,7 +20,6 @@ class OverlayInstruction(Instruction):
         '''
 
         super().__init__(instructionDir)
-        # self.alphaToWhite(instruction)
 
         self.nextStep()
         gray = cv2.cvtColor(self.steps[self.currentStep], cv2.COLOR_BGR2GRAY)

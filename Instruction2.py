@@ -27,7 +27,11 @@ class Instruction(object):
 
     def nextStep(self):
         '''Proceed to next step unless all steps are exhausted'''
-        self.currentStep += 1 if self.currentStep < len(self.steps) else 0
+        self.currentStep += 1 if self.currentStep < len(self.steps) - 1 else 0
+
+    def prevStep(self):
+        '''Proceed to next step unless all steps are exhausted'''
+        self.currentStep -= 1 if self.currentStep > 0 else 0
 
     def alphaToWhite(self, instruction):
         alpha = instruction[:, :, -1]

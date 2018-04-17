@@ -10,6 +10,7 @@ import re
 import numpy as np
 import pyttsx3
 
+
 class Instruction(object):
     def __init__(self, stepDir):
         '''Initialize with a path to the directory containg the images
@@ -18,7 +19,8 @@ class Instruction(object):
         self.finished = False
 
         self.stepOrder = [1, 0, 2, 4, 3]
-        self.stepToSpeech = {1 : "Fold in half", 0 : "Fold in on the dotted line", 2 : "Fold in on the dotted line", 4 : "Turn over", 3 : "Draw eyes and a nose"}
+        self.stepToSpeech = {1: "Fold in half", 0: "Fold in on the dotted line",
+                             2: "Fold in on the dotted line", 4: "Turn over", 3: "Draw eyes and a nose"}
         self.stepCounter = 0
         self.currentStep = self.stepOrder[self.stepCounter]
 
@@ -29,7 +31,8 @@ class Instruction(object):
         stepRegxp = re.compile('Step[1-5]+\.(jpg)')
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
         stepFiles = [match.group() for match in stepFiles]
-        self.steps = [cv2.imread(stepDir + '/' + filepath) for filepath in stepFiles]
+        self.steps = [cv2.imread(stepDir + '/' + filepath)
+                      for filepath in stepFiles]
         print(len(self.steps))
 
     def nextStep(self):
@@ -43,6 +46,7 @@ class Instruction(object):
         self.currentStep = self.stepOrder[self.stepCounter]
         self.engine.say(self.stepToSpeech[self.stepOrder[self.stepCounter]])
         self.engine.runAndWait()
+
 
 class InstructUser(Instruction):
     """ This class will fetch an instruction and project it into the upper left corner or into the paper
@@ -60,7 +64,8 @@ class InstructUser(Instruction):
         img = self.steps[self.currentStep]
         # scales image down by about a third
         res = cv2.resize(img, None, fx=0.7, fy=0.7)
-        frame[0:res.shape[0], 0:res.shape[1]] = res[0:res.shape[0], 0:res.shape[1]]
+        frame[0:res.shape[0], 0:res.shape[1]
+              ] = res[0:res.shape[0], 0:res.shape[1]]
         return frame
 
     def projectOntoVideo(self):
