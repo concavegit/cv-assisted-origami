@@ -136,9 +136,9 @@ def detection(img):
 	# We need to filter these lines somehow to reduce random/arbitrary data
 	theta_bins = dict()
 
-	for line in lines:
+	for line in lines[:50]:
 		for rho,theta in line:
-			nearest = str(around(int(theta), base=5))
+			nearest = str(around(int(np.degrees(theta)), base=10))
 			if nearest in theta_bins:
 				theta_bins[nearest] += 1
 			else:
@@ -146,12 +146,14 @@ def detection(img):
 
 	common_theta_base = sorted(theta_bins, key=theta_bins.get, reverse=True)
 	print(common_theta_base)
+	print(theta_bins)
 
-	if len(lines) > 20:
-		for line in lines[:20]:
-			for rho,theta in line:
-				a = np.cos(theta)
-				b = np.sin(theta)
+	for line in lines[:40]:
+		for rho,theta in line:
+			nearest = around(int(np.degrees(theta)), base=5)
+			if nearest in common_theta_base:
+				a = np.cos(np.radians(nearest))
+				b = np.sin(np.radians(nearest))
 				x0 = a*rho
 				y0 = b*rho
 				x1 = int(x0 + 1000*(-b))
@@ -161,7 +163,8 @@ def detection(img):
 				cv2.line(canvas,(x1,y1),(x2,y2),(255,255,255),2)
 
 
-	return canvas
+
+	return gray
 
 
 	#dst = cv2.cornerHarris(canvas,10,17,0.06)
