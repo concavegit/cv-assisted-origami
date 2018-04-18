@@ -9,6 +9,7 @@ import os
 import re
 import numpy as np
 import pyttsx3
+import time
 
 class Instruction(object):
     def __init__(self, stepDir):
@@ -16,6 +17,7 @@ class Instruction(object):
         named step%d.(png|jpg).
         '''
         self.finished = False
+        self.said = False
 
         self.stepOrder = [1, 0, 2, 4, 3]
         self.stepToSpeech = {1 : "Fold in half", 0 : "Fold in on the dotted line", 2 : "Fold in on the dotted line", 4 : "Turn over", 3 : "Draw eyes and a nose"}
@@ -30,7 +32,6 @@ class Instruction(object):
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
         stepFiles = [match.group() for match in stepFiles]
         self.steps = [cv2.imread(stepDir + '/' + filepath) for filepath in stepFiles]
-        print(len(self.steps))
 
     def nextStep(self):
         '''Proceed to next step unless all steps are exhausted'''
@@ -41,8 +42,7 @@ class Instruction(object):
             self.finished = True
             self.stepCounter = 0
         self.currentStep = self.stepOrder[self.stepCounter]
-        self.engine.say(self.stepToSpeech[self.stepOrder[self.stepCounter]])
-        self.engine.runAndWait()
+        self.said = False
 
 class InstructUser(Instruction):
     """ This class will fetch an instruction and project it into the upper left corner or into the paper
@@ -69,17 +69,26 @@ class InstructUser(Instruction):
         # Captures fram-by-frame in "frame" and
         # whether there is a frame or not (boolean) in ret
         ret, frame = self.cap.read()
-        frame = i.overlayInstructions(frame)
+        frame = self.overlayInstructions(frame)
         #frame = i.overlayInstructions(frame)
-        cv2.imshow('frame', frame)
 
+        cv2.imshow('frame', frame)
+        if not self.said:
+            self.stateInstructions()
+
+    def stateInstructions(self):
+        """States instructions at current step"""
+
+        self.engine.say(self.stepToSpeech[self.stepOrder[self.stepCounter]])
+        self.engine.runAndWait()
+        self.said = True
 
 if __name__ == "__main__":
-    i = InstructUser('OrigamiFox')
-    while not i.finished:
-        i.projectOntoVideo()
+    assistant = InstructUser('OrigamiFox')
+    while not assistant.finished:
+        assistant.projectOntoVideo()
         if cv2.waitKey(1) & 0xFF == ord('k'):
-            i.nextStep()
+            assistant.nextStep()
     # When everything is done, release the Capture
-    i.cap.release()
+    assistant.cap.release()
     cv2.destroyAllWindows()
