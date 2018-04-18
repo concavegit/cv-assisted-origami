@@ -11,6 +11,7 @@ import numpy as np
 import pyttsx3
 import time
 
+
 class Instruction(object):
     def __init__(self, stepDir):
         '''Initialize with a path to the directory containg the images
@@ -20,7 +21,8 @@ class Instruction(object):
         self.said = False
 
         self.stepOrder = [1, 0, 2, 4, 3]
-        self.stepToSpeech = {1 : "Fold in half", 0 : "Fold in on the dotted line", 2 : "Fold in on the dotted line", 4 : "Turn over", 3 : "Draw eyes and a nose"}
+        self.stepToSpeech = {1: "Fold in half", 0: "Fold in on the dotted line",
+                             2: "Fold in on the dotted line", 4: "Turn over", 3: "Draw eyes and a nose"}
         self.stepCounter = 0
         self.currentStep = self.stepOrder[self.stepCounter]
 
@@ -44,6 +46,7 @@ class Instruction(object):
         self.currentStep = self.stepOrder[self.stepCounter]
         self.said = False
 
+
 class InstructUser(Instruction):
     """ This class will fetch an instruction and project it into the upper left corner or into the paper
     (currently only does upper left)"""
@@ -60,7 +63,8 @@ class InstructUser(Instruction):
         img = self.steps[self.currentStep]
         # scales image down by about a third
         res = cv2.resize(img, None, fx=0.7, fy=0.7)
-        frame[0:res.shape[0], 0:res.shape[1]] = res[0:res.shape[0], 0:res.shape[1]]
+        frame[0:res.shape[0], 0:res.shape[1]
+              ] = res[0:res.shape[0], 0:res.shape[1]]
         return frame
 
     def projectOntoVideo(self):

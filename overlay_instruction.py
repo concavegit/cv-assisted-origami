@@ -6,10 +6,11 @@
 
 import numpy as np
 import cv2
+from Instruction2 import Instruction
 
 
-class OverlayInstruction:
-    def __init__(self, real, instruction):
+class OverlayInstruction(Instruction):
+    def __init__(self, real, instructionDir):
         '''
         Fields:
         - instruction: full color of instruction image
@@ -18,12 +19,13 @@ class OverlayInstruction:
         - realVerts: vertices of real camera input
         '''
 
-        self.alphaToWhite(instruction)
+        super().__init__(instructionDir)
 
-        gray = cv2.cvtColor(self.instruction, cv2.COLOR_BGR2GRAY)
+        self.nextStep()
+        gray = cv2.cvtColor(self.steps[self.currentStep], cv2.COLOR_BGR2GRAY)
 
         # Just the outline of the shape
-        self.outline = np.uint8((gray > 0)) * 255
+        self.outline = np.uint8((gray > 4)) * 255
 
         # An array of verts
         self.verts = cv2.goodFeaturesToTrack(
@@ -36,26 +38,12 @@ class OverlayInstruction:
         self.th = cv2.threshold(realGray, 128, 255, cv2.THRESH_BINARY)[1]
 
         # array of real verts
-        self.realVerts = cv2.goodFeaturesToTrack(self.th, 100, .5, 10)[:, -1]
+        self.realVerts = cv2.goodFeaturesToTrack(self.th, 100, .4, 10)[:, -1]
         self.realVerts = self.sortVerts(self.realVerts)
         self.realArea = self.computeArea(self.realVerts)
 
         self.resizeInstruction()
         self.overlayInstructions()
-
-    def alphaToWhite(self, instruction):
-        '''
-        Convert the transparent instruction background to white.
-        '''
-
-        img = cv2.imread(instruction, -1)
-        alpha = img[:, :, -1]
-        mask = np.int8((alpha == 0) * 255)
-        color = img[:, :, :-1]
-        whiteBack = cv2.bitwise_not(color, np.array(color), mask=mask)
-
-        # Color representation of instruction
-        self.instruction = whiteBack
 
     def sortVerts(self, verts):
         '''
@@ -85,9 +73,11 @@ class OverlayInstruction:
         '''
 
         scale = np.sqrt(self.realArea / self.area)
-        dim = np.int0(scale * np.float64(self.instruction.shape))[:-1]
+        dim = np.int0(
+            scale * np.float64(self.steps[self.currentStep].shape))[:-1]
         self.scale = scale
-        self.resized = cv2.resize(self.instruction, (dim[1], dim[0]))
+        self.resized = cv2.resize(
+            self.steps[self.currentStep], (dim[1], dim[0]))
 
     def overlayInstructions(self):
         '''
@@ -121,16 +111,16 @@ class OverlayInstruction:
         # if the trim on the side is zero, do not cut from the beginning
         rightTrim = trim[1, 1]
         bottomTrim = bottomTrim if bottomTrim < 0 \
-            else padded.shape[0] - trim[0, 0]
+            else padded.shape[0]
         rightTrim = rightTrim if rightTrim < 0 \
-            else padded.shape[1] - trim[1, 0]
+            else padded.shape[1]
         trimmed = padded[trim[0, 0]:bottomTrim, trim[1, 0]:rightTrim]
 
         gray = cv2.cvtColor(trimmed, cv2.COLOR_BGR2GRAY)
         mask = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY)[1]
         invMask = np.bitwise_not(mask)
-        bg = cv2.bitwise_and(self.real, self.real, mask=mask)
         fg = cv2.bitwise_and(trimmed, trimmed, mask=invMask)
+        bg = cv2.bitwise_and(self.real, self.real, mask=mask)
         overlayed = cv2.add(bg, fg)
         self.overlayed = overlayed
 
@@ -138,7 +128,10 @@ class OverlayInstruction:
 if __name__ == '__main__':
     # testing
     r = cv2.imread('PaperPics/triangle.jpg')
-    x = OverlayInstruction(r, 'CompGenInstructions/step02.png')
+    x = OverlayInstruction(r, 'CompGenInstructions')
+    for vert in np.int0(x.realVerts):
+        w, y = vert.ravel()
+        cv2.circle(x.overlayed, (w, y), 3, 255, -1)
     cv2.imshow('y', x.overlayed)
     cv2.waitKey()
     cv2.destroyAllWindows()
