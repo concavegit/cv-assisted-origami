@@ -27,7 +27,7 @@ class Instruction(object):
         self.currentStep = self.stepOrder[self.stepCounter]
 
         self.engine = pyttsx3.init()
-        self.engine.setProperty('rate', 150)
+        self.engine.setProperty('rate', 115)
 
         files = os.listdir(stepDir)
         stepRegxp = re.compile('Step[1-5]+\.(jpg)')
