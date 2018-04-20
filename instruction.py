@@ -10,7 +10,6 @@ import re
 import numpy as np
 import pyttsx3
 
-
 class Instruction(object):
     def __init__(self, stepDir):
         '''Initialize with a path to the directory containg the images
