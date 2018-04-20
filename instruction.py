@@ -18,7 +18,8 @@ class Instruction(object):
         self.finished = False
         self.said = False
 
-        self.stepToSpeech = {0: "Fold in half", 1: "Fold in on the dotted line", 2: "Fold in on the dotted line", 3: "Turn over", 4: "Draw eyes and a nose"}
+        self.stepToSpeech = {0: "Fold in half", 1: "Fold in on the dotted line",
+                             2: "Fold in on the dotted line", 3: "Turn over", 4: "Draw eyes and a nose"}
         self.stepCounter = 0
 
         self.engine = pyttsx3.init()
@@ -30,7 +31,8 @@ class Instruction(object):
         stepRegxp = re.compile('Step[1-5]+\.(jpg)')
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
         stepFiles = [match.group() for match in stepFiles]
-        self.steps = [cv2.imread(stepDir + '/' + filepath) for filepath in stepFiles]
+        self.steps = [cv2.imread(stepDir + '/' + filepath)
+                      for filepath in stepFiles]
 
     def nextStep(self):
         '''Proceed to next step unless all steps are exhausted'''
@@ -78,7 +80,6 @@ class InstructUser(Instruction):
 
         cv2.imshow('frame', frame)
 
-
         if not self.said and self.skipCounter > 2:
             self.stateInstructions()
 
@@ -88,6 +89,7 @@ class InstructUser(Instruction):
         self.engine.say(self.stepToSpeech[self.stepCounter])
         self.engine.runAndWait()
         self.said = True
+
 
 if __name__ == "__main__":
     assistant = InstructUser('OrigamiFox')
