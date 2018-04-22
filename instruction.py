@@ -7,7 +7,6 @@
 import cv2
 import os
 import re
-import numpy as np
 import pyttsx3
 
 
