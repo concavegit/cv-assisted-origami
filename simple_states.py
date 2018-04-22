@@ -109,7 +109,7 @@ def detection(img, REF):
 
 
 vc = cv2.VideoCapture(0)
-img1 = cv2.imread('sq.png',0)
+img1 = cv2.imread('AR_instructions/sq.png',0)
 
 if vc.isOpened(): # try to get the first frame
     rval, frame = vc.read()
