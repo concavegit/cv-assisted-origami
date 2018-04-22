@@ -91,6 +91,16 @@ class InstructUser(Instruction):
         self.said = True
 
 
+def run(piecePath):
+    assistant = InstructUser(piecePath)
+    while not assistant.finished:
+        assistant.projectOntoVideo()
+        if cv2.waitKey(1) & 0xFF == ord('k'):
+            assistant.nextStep()
+    # When everything is done, release the Capture
+    assistant.cap.release()
+    cv2.destroyAllWindows()
+
 if __name__ == "__main__":
     assistant = InstructUser('OrigamiFox')
     while not assistant.finished:
