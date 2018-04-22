@@ -90,6 +90,7 @@ def overlayVideo(cap, directory):
     cap.release()
     cv2.destroyAllWindows()
 
+
 def run(directory):
     cap = cv2.VideoCapture(0)
     overlayVideo(cap, directory)
