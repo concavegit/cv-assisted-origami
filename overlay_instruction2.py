@@ -78,17 +78,21 @@ def resizeInstruction(instruction, scale):
     return cv2.resize(instruction, (dim[1], dim[0]))
 
 
-def overlayVideo(cap):
-    x = Instruction("CompGenInstructions")
-    while True:
+def overlayVideo(cap, directory):
+    x = Instruction(directory)
+    while x.running:
         ret, frame = cap.read()
         instruction = x.steps[x.currentStep]
         cv2.imshow("test", overlayInstruction(frame, instruction))
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) == ord('l'):
             x.nextStep()
 
     cap.release()
     cv2.destroyAllWindows()
+
+def run(directory):
+    cap = cv2.VideoCapture(0)
+    overlayVideo(cap, directory)
 
 
 if __name__ == '__main__':
