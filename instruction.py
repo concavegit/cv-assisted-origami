@@ -10,6 +10,7 @@ import re
 import numpy as np
 import pyttsx3
 
+
 class Instruction(object):
     def __init__(self, stepDir):
         '''Initialize with a path to the directory containg the images
@@ -100,6 +101,7 @@ def run(piecePath):
     # When everything is done, release the Capture
     assistant.cap.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     assistant = InstructUser('OrigamiFox')
