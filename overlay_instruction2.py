@@ -97,4 +97,4 @@ def run(directory):
 
 if __name__ == '__main__':
     cap = cv2.VideoCapture(0)
-    overlayVideo(cap)
+    overlayVideo(cap, "CompGenInstructions")
