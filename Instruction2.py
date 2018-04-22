@@ -18,6 +18,7 @@ class Instruction(object):
 
         self.currentStep = 0
 
+        self.running = True
         files = sorted(os.listdir(stepDir))
         stepRegxp = re.compile('step[0-9]+\.png')
         stepFiles = list(filter(None, [stepRegxp.match(img) for img in files]))
@@ -27,7 +28,10 @@ class Instruction(object):
 
     def nextStep(self):
         '''Proceed to next step unless all steps are exhausted'''
-        self.currentStep += 1 if self.currentStep < len(self.steps) - 1 else 0
+        if self.currentStep < len(self.steps) - 1:
+            self.currentStep += 1
+        else:
+            self.running = False
 
     def prevStep(self):
         '''Proceed to next step unless all steps are exhausted'''
