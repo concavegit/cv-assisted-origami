@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# @author: Kawin Nikomborirak
+# @date: 2018-04-22
+
 import numpy as np
 import cv2
 from Instruction2 import Instruction
