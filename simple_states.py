@@ -107,24 +107,24 @@ def detection(img, REF):
     return imgb
 
 
+def run(imgname):
+    vc = cv2.VideoCapture(0)
+    img1 = cv2.imread('AR_instructions/'+str(imgname),0)
 
-vc = cv2.VideoCapture(0)
-img1 = cv2.imread('AR_instructions/sq.png',0)
+    if vc.isOpened(): # try to get the first frame
+        rval, frame = vc.read()
+    else:
+        rval = False
 
-if vc.isOpened(): # try to get the first frame
-    rval, frame = vc.read()
-else:
-    rval = False
+    while rval:
+        rval, img = vc.read()
+        img = detection(img,img1)
+        cv2.namedWindow("feed", cv2.WND_PROP_FULLSCREEN)
+        cv2.setWindowProperty("feed", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+        cv2.imshow("feed", img)
+        key = cv2.waitKey(20)
 
-while rval:
-    rval, img = vc.read()
-    img = detection(img,img1)
-    cv2.namedWindow("feed", cv2.WND_PROP_FULLSCREEN)
-    cv2.setWindowProperty("feed", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-    cv2.imshow("feed", img)
-    key = cv2.waitKey(20)
+        if key == 27:
+            break
 
-    if key == 27:
-        break
-
-cv2.destroyWindow("feed")
+    cv2.destroyWindow("feed")
