@@ -1,4 +1,4 @@
-# Origami
+# Origami (ALL AR DOCUMENTATION IN DOCUMENTS)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)
 
