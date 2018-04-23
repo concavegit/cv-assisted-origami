@@ -88,7 +88,7 @@ def overlayVideo(cap, directory):
         ret, frame = cap.read()
         instruction = x.steps[x.currentStep]
         cv2.imshow("test", overlayInstruction(frame, instruction))
-        if cv2.waitKey(1) == ord('l'):
+        if cv2.waitKey(1) == ord(' '):
             x.nextStep()
 
     cap.release()
