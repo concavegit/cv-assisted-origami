@@ -10,7 +10,7 @@ from Instruction2 import Instruction
 def overlayInstruction(real, instruction):
     '''Overlay the instructions onto real camera input'''
     gray = cv2.cvtColor(instruction, cv2.COLOR_BGR2GRAY)
-    outline = np.uint8(gray > 4) * 255
+    outline = np.uint8(gray > 8) * 255
     verts = cv2.goodFeaturesToTrack(outline, 100, 0.5, 10)[:, 0]
     area = computeArea(verts)
     realGray = cv2.cvtColor(real, cv2.COLOR_BGR2GRAY)
