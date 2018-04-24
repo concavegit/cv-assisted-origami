@@ -30,7 +30,7 @@ def detection(img, REF):
     # Research adaptive thresholding
 
     imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    thresh = imgray.mean() + 50
+    thresh = imgray.mean() + 100
     maxValue = 180
     ret, thresh = cv2.threshold(imgray, thresh, maxValue, 0)
 
@@ -131,5 +131,3 @@ def run(imgname):
             break
 
     cv2.destroyWindow("feed")
-
-run('int.png')
