@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 import time
 from PyQt5 import QtWidgets, QtCore, QtGui
