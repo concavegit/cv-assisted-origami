@@ -1,6 +1,7 @@
 import sys
 import time
 from PyQt5 import QtWidgets, QtCore, QtGui
+from pygame import mixer
 
 
 import instruction
@@ -20,6 +21,10 @@ class Window(QtWidgets.QMainWindow):
         self.setWindowTitle("CV-Assisted Origami")
         self.home()
         self.show()
+
+        mixer.init()
+        mixer.music.load('/home/mark/Desktop/Japan.mp3')
+        mixer.music.play()
 
     def home(self):
         # title
@@ -111,9 +116,3 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     GUI = Window()
     sys.exit(app.exec_())
-<<<<<<< HEAD
-=======
-
-
-run()
->>>>>>> 00154349f64795558b818a47bb708e9ac99afcc0
