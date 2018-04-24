@@ -14,14 +14,14 @@ Each member of the team entered with a learning goal in mind.
 Kawin has a fair amount of experience with creating 'academic' code.
 However, he knows that the world needs products which solve problems and can be used by everyone.
 In that regard he has been excited to go through the process of making something useable and intuitive.
-He also is intrigued by computer vision and its computational and yet non-deterministic qualities, and was happy to use this project as an excuse to explore the field.
+He also is intrigued by computer vision and its computational and yet non-deterministic qualities, and has been happy to use this project as an excuse to explore the field.
 
 ## Mark Goldwater
 
 ## Sid Garimella
 
 # Credit
-Other than those nerds described above, there are groups and individuals who have been critical to actualizing our dreams.
+Other than those nerds described up there, there are groups and individuals who have been critical to actualizing our dreams.
 
 ### Ben Hill
 Ben Hill is our software design instructor and has put up with our out-of-control imagination and ambition and always pointed us in a constructive direction.
