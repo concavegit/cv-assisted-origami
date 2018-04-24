@@ -19,3 +19,17 @@ He also is intrigued by computer vision and its computational and yet non-determ
 ## Mark Goldwater
 
 ## Sid Garimella
+
+# Credit
+Other than those nerds described above, there are groups and individuals who have been critical to actualizing our dreams.
+
+### Ben Hill
+Ben Hill is our software design instructor and has put up with our out-of-control imagination and ambition and always pointed us in a constructive direction.
+
+### [All OpenCV Developers](https://opencv.org/)
+OpenCV was the image processing tool we used.
+The amount of work, talent, and knowlege is phenomenal, and we are glad that intellligent people with PHDs put this together for idiots like us to use for free.
+
+### QT
+Having a graphical user interface which works across windows, mac, and linux seamlessly is a blessing.
+The existance of QT has certainly saved a lot of our hair from being pulled out.
