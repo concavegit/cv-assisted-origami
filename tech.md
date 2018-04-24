@@ -33,3 +33,4 @@ The final result is this:
 This method is simple and effective, though it requires the paper to be parallel to the camera as well as a specific rotation.
 
 ## The Simple and More Effective
+(Explanation of shear and rotation matrices for paper projection)

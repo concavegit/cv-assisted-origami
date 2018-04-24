@@ -17,6 +17,9 @@ In that regard he has been excited to go through the process of making something
 He also is intrigued by computer vision and its computational and yet non-deterministic qualities, and has been happy to use this project as an excuse to explore the field.
 
 ## Mark Goldwater
+Mark has a fair amount of programming experience programming, but started seriously writing functional and
+useful programs his first year at Olin College. He has been interested in OpenCV and what is has to offer, so he
+has been happy to engage in a project that utilized the library and apply it to another one of his interests: origami.
 
 ## Sid Garimella
 
@@ -24,8 +27,9 @@ He also is intrigued by computer vision and its computational and yet non-determ
 Our group began with two interests: machine learning and computer vision.
 However, as the intersection between the two is either already done or the subject of PhD research, we began to ask what we enjoyed: origami.
 
-From that point, we wanted to make instructions easier to follow using computer vision.
-We spent around a week fleshing out this idea, after which we learned a few things from our peers.
+
+From that point, we wanted to make instructions easier to follow using computer vision. Traditional origami books are often difficult to interpret/understand, so we wanted our program to make
+doing origami easier and more accessible especially to the beginner. We spent around a week fleshing out this idea, after which we learned a few things from our peers.
 One thing we learned was that we were getting hung up on some way to describe the state of an origami model to use in our program, when really all we needed was a picture of an outline of the desired outcome and a few lines to indicate folds.
 
 We spent another week creating our minimum viable product (MVP) and once again turned to our peers for advice.
