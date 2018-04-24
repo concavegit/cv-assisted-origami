@@ -4,7 +4,7 @@ title: About
 ---
 
 We are a group of engineers who have come close to failure many times and have had to perservere through many failed origami models.
-With this project, we hope to make this pain for future folders and make origami more enjoyable.
+With this project, we hope to erase this pain for future folders and make origami more enjoyable.
 
 We all enjoy origami a lot.
 However, as students, everything is better where learning is involved!
