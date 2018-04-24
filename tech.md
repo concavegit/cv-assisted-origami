@@ -17,6 +17,7 @@ The `DetectPaper` and `OverlayInstruction` stages are not really classes rather 
 In all cases the instructions are stored as images with solid black outlines and other notation for folds.
 
 ## MVP
+This is an MVP because there is no projection of the paper, simply an image of the instructions in the upper right-hand corner of the display. Not only was it a first step in getting a product out, it also offers voice output for reading out loud instructions.
 
 ## The Simple and Effective
 The simple method lies in first scaling the instruction image and then moving it to the correct location on the camera input.
