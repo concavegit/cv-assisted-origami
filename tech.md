@@ -1,5 +1,7 @@
 ---
 title: Tech
+permalink: /tech/
+layout: page
 ---
 
 # Projecting Instructions onto a Paper
