@@ -4,6 +4,8 @@ permalink: /tech/
 layout: page
 ---
 
+![](https://github.com/concavegit/cv-assisted-origami/blob/master/documents/class_diagram.png?raw=true)
+
 # Projecting Instructions onto a Paper
 In all cases the instructions are stored as images with solid black outlines and other notation for folds.
 
@@ -17,7 +19,5 @@ By comparing the areas, the instruction image can be scaled to the size of the u
 The placement of the image of the instruction is done by overlaying the centroids of the vertices of the scaled instruction image and the user's paper.
 
 This method is simple and effective, though it requires the paper to be parallel to the camera as well as a specific rotation.
-
-![](https://github.com/concavegit/cv-assisted-origami/blob/master/documents/class_diagram.png?raw=true)
 
 ## The Simple and More Effective
