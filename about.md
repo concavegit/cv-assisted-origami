@@ -1,5 +1,6 @@
 ---
 permalink: /about/
+title: About
 ---
 
 We are a group of engineers who have come close to failure many times and have had to perservere through many failed origami models.
