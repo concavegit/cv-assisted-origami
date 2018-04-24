@@ -22,7 +22,7 @@ He also is intrigued by computer vision and its computational and yet non-determ
 
 # Process
 Our group began with two interests: machine learning and computer vision.
-However, as the intersection between the two is either already done or the subject of PHD research, we began to ask what we enjoyed: origami.
+However, as the intersection between the two is either already done or the subject of PhD research, we began to ask what we enjoyed: origami.
 
 From that point, we wanted to make instructions easier to follow using computer vision.
 We spent around a week fleshing out this idea, after which we learned a few things from our peers.
@@ -43,7 +43,7 @@ Ben Hill is our software design instructor and has put up with our out-of-contro
 
 ### All [OpenCV](https://opencv.org/) Developers
 OpenCV was the image processing tool we used.
-The amount of work, talent, and knowlege is phenomenal, and we are glad that intellligent people with PHDs put this together for idiots like us to use for free.
+The amount of work, talent, and knowlege is phenomenal, and we are glad that intellligent people with PhDs put this together for idiots like us to use for free.
 
 ### The [Qt](https://www.qt.io/) Company
 Having a graphical user interface which works across windows, mac, and linux seamlessly is a blessing.
