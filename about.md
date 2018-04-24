@@ -17,11 +17,12 @@ In that regard he has been excited to go through the process of making something
 He also is intrigued by computer vision and its computational and yet non-deterministic qualities, and has been happy to use this project as an excuse to explore the field.
 
 ## Mark Goldwater
-Mark has a fair amount of programming experience, but started seriously writing functional and
+Mark has a fair amount of programming experience programming, but started seriously writing functional and
 useful programs his first year at Olin College. He has been interested in OpenCV and what is has to offer, so he
 has been happy to engage in a project that utilized the library and apply it to another one of his interests: origami.
 
 ## Sid Garimella
+Sid also has a fair amount of programming, but has taken a liking to the mathematics involved in computer vision. Having researched similar topics prior to joining Olin, the problem of origami state detection appealed greatly to him, and he gladly took on the project. 
 
 # Process
 Our group began with two interests: machine learning and computer vision.
