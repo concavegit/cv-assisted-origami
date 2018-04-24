@@ -1,7 +1,6 @@
 ---
 title: Tech
 permalink: /tech/
-layout: page
 ---
 
 ![](https://github.com/concavegit/cv-assisted-origami/blob/master/documents/class_diagram.png?raw=true)
