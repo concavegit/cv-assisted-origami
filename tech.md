@@ -26,6 +26,10 @@ The same area-finding procedure is used on the image of the instruction image.
 By comparing the areas, the instruction image can be scaled to the size of the user's paper.
 The placement of the image of the instruction is done by overlaying the centroids of the vertices of the scaled instruction image and the user's paper.
 
+The final result is this:
+
+![](https://github.com/concavegit/cv-assisted-origami/raw/master/PaperPics/testresult.png)
+
 This method is simple and effective, though it requires the paper to be parallel to the camera as well as a specific rotation.
 
 ## The Simple and More Effective
