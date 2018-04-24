@@ -7,8 +7,8 @@
 import cv2
 import os
 import re
-import numpy as np
 import pyttsx3
+
 
 class Instruction(object):
     def __init__(self, stepDir):
@@ -100,6 +100,7 @@ def run(piecePath):
     # When everything is done, release the Capture
     assistant.cap.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     assistant = InstructUser('OrigamiFox')
