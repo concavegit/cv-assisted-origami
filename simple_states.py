@@ -131,3 +131,5 @@ def run(imgname):
             break
 
     cv2.destroyWindow("feed")
+
+run('int.png')
