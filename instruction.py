@@ -24,6 +24,7 @@ class Instruction(object):
 
         self.engine = pyttsx3.init()
         self.engine.setProperty('rate', 115)
+        self.engine.setProperty('voice', 'english-us')
 
         self.skipCounter = 0
 

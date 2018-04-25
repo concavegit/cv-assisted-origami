@@ -2,6 +2,7 @@
 import sys
 import time
 from PyQt5 import QtWidgets, QtCore, QtGui
+import pygame
 
 
 import instruction
@@ -21,6 +22,10 @@ class Window(QtWidgets.QMainWindow):
         self.setWindowTitle("CV-Assisted Origami")
         self.home()
         self.show()
+
+        pygame.mixer.init()
+        pygame.mixer.music.load('Japan.mp3')
+        pygame.mixer.music.play(-1)
 
     def home(self):
         # title
