@@ -1,6 +1,6 @@
 [project site](https://concavegit.github.io/cv-assisted-origami/)
 
-# Origami (ALL AR DOCUMENTATION IN DOCUMENTS)
+# Origami
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)
 
@@ -9,14 +9,16 @@
 A program that uses webcam input to visually assist users with origami folds for a given flat construction.
 
 ## Dependencies:
-
+To obtain the following dependencies, simply run `pip install -r REQUIREMENTS.txt`
   * OpenCV 3
   * Numpy 1.14.2
-  * PIL 3.3+
+  * PyQt5
+  * pygame
+  * pyttsx3
 
 ## Quick start:
 
-To run this software, execute _____.py.
+To run this software, execute main.py by typing `./main.py` in the cv-assisted-origami directory
 
 ## Usage:
 
