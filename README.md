@@ -2,9 +2,7 @@
 
 # Origami (ALL AR DOCUMENTATION IN DOCUMENTS)
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)
-
-![demo](PaperPics/testresult.png)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)ls
 
 A program that uses webcam input to visually assist users with origami folds for a given flat construction.
 

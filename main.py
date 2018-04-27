@@ -5,8 +5,8 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 import pygame
 
 
-import instruction
-import overlay_instruction2
+import instructionCorner
+import overlayInstruction
 
 
 class Window(QtWidgets.QMainWindow):
@@ -102,11 +102,11 @@ class Window(QtWidgets.QMainWindow):
         samButton.show()
 
     def runSam(self):
-        overlay_instruction2.run('CompGenInstructions')
+        overlayInstruction.run('CompGenInstructions')
         self.__init__()
 
     def runFox(self):
-        instruction.run('OrigamiFox')
+        instructionCorner.run('OrigamiFox')
         self.__init__()
 
     def close_appllication(self):
