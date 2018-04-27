@@ -60,8 +60,6 @@ The advanced method builds on top of prior methodologies by providing an augment
 
    At this point, the contour that is detected can be compared against the detected contour from the instructions to estimate a homography matrix. Essentially, this operation involves solving for some transformation matrix given both sets of points.
 
-   ![](https://latex.codecogs.com/gif.latex?s%20%5Cbegin%7Bbmatrix%7D%20x%5E%7B%27%7D%20%5C%5C%20y%5E%7B%27%7D%20%5C%5C%201%20%5Cend%7Bbmatrix%7D%20%3D%20H%20%5Cbegin%7Bbmatrix%7D%20x%20%5C%5C%20y%20%5C%5C%201%20%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20h_%7B11%7D%20%26%20h_%7B12%7D%20%26%20h_%7B13%7D%20%5C%5C%20h_%7B21%7D%20%26%20h_%7B22%7D%20%26%20h_%7B23%7D%20%5C%5C%20h_%7B31%7D%20%26%20h_%7B32%7D%20%26%20h_%7B33%7D%20%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D%20x%20%5C%5C%20y%20%5C%5C%201%20%5Cend%7Bbmatrix%7D)
-
    $$
    s \begin{bmatrix} x'\\y'\\1\end{bmatrix}
    = H \begin{bmatrix}x\\y\\1\end{bmatrix}
