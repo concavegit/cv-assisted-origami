@@ -16,7 +16,7 @@ A program that uses webcam input to visually assist users with origami folds for
 
 ## Quick start:
 
-To run this software, execute _____.py.
+To run this software, execute main.py by typing `./main.py` in the cv-assisted-origami directory
 
 ## Usage:
 
