@@ -1,3 +1,3 @@
 language: python
-script: pip install -r REQUIREMENTS.txt
+script: pip3 install -r REQUIREMENTS.txt
 # script: ./main.py
