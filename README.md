@@ -2,6 +2,8 @@
 
 # Origami
 
+![https://travis-ci.org/concavegit/cv-assisted-origami.svg?branch=master](https://travis-ci.org/concavegit/cv-assisted-origami)
+
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)
 
 ![demo](https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/PaperPics/testresult.png?raw=true)
