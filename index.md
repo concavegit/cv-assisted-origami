@@ -1,4 +1,4 @@
-![](https://github.com/concavegit/cv-assisted-origami/raw/master/PaperPics/testresult.png)
+![](https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/PaperPics/testresult.png?raw=true)
 
 By overlaying instructions realtime onto your sheet of paper, we make following origami instructions more straightforward and clear.
 
