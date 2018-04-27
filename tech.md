@@ -66,6 +66,7 @@ The advanced method builds on top of prior methodologies by providing an augment
    = H \begin{bmatrix}x\\y\\1\end{bmatrix}
    = \begin{bmatrix}h_11 & h_12 & h_13 \\ h_21 & h_22 & h_23\\ h_31 & h_32 & h_33 \end{bmatrix}
    \begin{bmatrix}x\\y\\1\end{bmatrix}$
+   $x^2$
 
 
   **Instruction overlay**
