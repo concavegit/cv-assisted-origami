@@ -62,10 +62,13 @@ The advanced method builds on top of prior methodologies by providing an augment
 
    ![](https://latex.codecogs.com/gif.latex?s%20%5Cbegin%7Bbmatrix%7D%20x%5E%7B%27%7D%20%5C%5C%20y%5E%7B%27%7D%20%5C%5C%201%20%5Cend%7Bbmatrix%7D%20%3D%20H%20%5Cbegin%7Bbmatrix%7D%20x%20%5C%5C%20y%20%5C%5C%201%20%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20h_%7B11%7D%20%26%20h_%7B12%7D%20%26%20h_%7B13%7D%20%5C%5C%20h_%7B21%7D%20%26%20h_%7B22%7D%20%26%20h_%7B23%7D%20%5C%5C%20h_%7B31%7D%20%26%20h_%7B32%7D%20%26%20h_%7B33%7D%20%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D%20x%20%5C%5C%20y%20%5C%5C%201%20%5Cend%7Bbmatrix%7D)
 
-   $s \begin{bmatrix} x'\\y'\\1\end{bmatrix}
+   \[
+   s \begin{bmatrix} x'\\y'\\1\end{bmatrix}
    = H \begin{bmatrix}x\\y\\1\end{bmatrix}
    = \begin{bmatrix}h_11 & h_12 & h_13 \\ h_21 & h_22 & h_23\\ h_31 & h_32 & h_33 \end{bmatrix}
-   \begin{bmatrix}x\\y\\1\end{bmatrix}$
+   \begin{bmatrix}x\\y\\1\end{bmatrix}
+   \]
+
    $x^2$
 
 
