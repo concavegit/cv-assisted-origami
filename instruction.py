@@ -3,18 +3,18 @@
 @date: 2018/04/02
 @brief: These classes display instructions for the folder
 '''
-
-import cv2
 import os
 import re
 import pyttsx3
+import cv2
 
 
 class Instruction(object):
     def __init__(self, stepDir):
-        '''Initialize with a path to the directory containg the images
+        """Initialize with a path to the directory containg the images
         named step%d.(jpg).
-        '''
+        """
+
         self.finished = False
         self.said = False
 
@@ -36,7 +36,7 @@ class Instruction(object):
                       for filepath in stepFiles]
 
     def nextStep(self):
-        '''Proceed to next step unless all steps are exhausted'''
+        """Proceed to next step unless all steps are exhausted"""
         self.skipCounter = 0
 
         self.said = True
@@ -93,6 +93,8 @@ class InstructUser(Instruction):
 
 
 def run(piecePath):
+    """ runs instruction sequence"""
+
     assistant = InstructUser(piecePath)
     while not assistant.finished:
         assistant.projectOntoVideo()
