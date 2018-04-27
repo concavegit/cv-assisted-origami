@@ -1,5 +1,9 @@
 language: python
 python: 3.6
 
+cache:
+  directories:
+    - $HOME/.cache/pip
+
 script: pip install -r REQUIREMENTS.txt
-# script: ./main.py
+script: ./main.py
