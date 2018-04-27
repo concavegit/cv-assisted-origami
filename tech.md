@@ -36,38 +36,38 @@ This method is simple and effective, though it requires the paper to be parallel
 
 The advanced method builds on top of prior methodologies by providing an augmented reality experience, and actually projecting the instructions onto the paper as it is folded. While this task is incredibly difficult to perform without depth sensing for 3D structure (for minute folds), it turns out it is not all too difficult to pull off for larger folds, which can be represented more accurately by the shape of the perimeter of the folding paper. Still, the ideal instruction needs to be transformed before it can be overlaid onto the webcam input. To do this, several steps were taken.
 
-  **Image thresholding**
+### Image thresholding
 
-   A similar, mean-based thresholding process was used for this method to the prior methods. A binary image was produced as output for contour detection.
+A similar, mean-based thresholding process was used for this method to the prior methods. A binary image was produced as output for contour detection.
 
-  **Countour detection**
+### Countour detection
 
-   All the countours that can be extracted from the thresholded image are extracted and sorted into an array by area.
+All the countours that can be extracted from the thresholded image are extracted and sorted into an array by area.
 
-  **Contour filtering**
+### Contour filtering
 
-   A set of rules was devised to determine whether a contour was "bad" or not. While the process used to determine these rules was extensive and highly based on trial and error, it remains an effective and necessary step for the detection of the paper.
+A set of rules was devised to determine whether a contour was "bad" or not. While the process used to determine these rules was extensive and highly based on trial and error, it remains an effective and necessary step for the detection of the paper.
 
-  **Countour approximation**
+### Countour approximation
 
-   For all the remaining "good" contours, a polygon approximation algorithm is executed. Highly irregular shapes produce shapes with a high edge count, and can be detected by using a proportionally small amount of the perimeter for approximation.
+For all the remaining "good" contours, a polygon approximation algorithm is executed. Highly irregular shapes produce shapes with a high edge count, and can be detected by using a proportionally small amount of the perimeter for approximation.
 
-  **Countour-Instruction verification**
+### Countour-Instruction verification
 
-   The number of sides of the instruction at a given state is used as a final filter for any remaining contours. The remaining contour, if any, represents a polygonal approximation of the paper.
+The number of sides of the instruction at a given state is used as a final filter for any remaining contours. The remaining contour, if any, represents a polygonal approximation of the paper.
 
-  **Homography estimation**
+### Homography estimation
 
-   At this point, the contour that is detected can be compared against the detected contour from the instructions to estimate a homography matrix. Essentially, this operation involves solving for some transformation matrix given both sets of points.
+At this point, the contour that is detected can be compared against the detected contour from the instructions to estimate a homography matrix. Essentially, this operation involves solving for some transformation matrix given both sets of points.
 
-   $$
-   s \begin{bmatrix} x'\\y'\\1\end{bmatrix}
-   = H \begin{bmatrix}x\\y\\1\end{bmatrix}
-   = \begin{bmatrix}h_11 & h_12 & h_13 \\ h_21 & h_22 & h_23\\ h_31 & h_32 & h_33 \end{bmatrix}
-   \begin{bmatrix}x\\y\\1\end{bmatrix}
-   $$
+$$
+s \begin{bmatrix} x'\\y'\\1\end{bmatrix}
+= H \begin{bmatrix}x\\y\\1\end{bmatrix}
+= \begin{bmatrix}h_11 & h_12 & h_13 \\ h_21 & h_22 & h_23\\ h_31 & h_32 & h_33 \end{bmatrix}
+\begin{bmatrix}x\\y\\1\end{bmatrix}
+$$
 
 
-  **Instruction overlay**
+### Instruction overlay
 
-   We apply the estimated homography matrix as a transformation to the instruction image, and render it on a black canvas. This image is used as a mask over the webcam input, and the transformed instruction is overlaid on top of the camera feed.
+We apply the estimated homography matrix as a transformation to the instruction image, and render it on a black canvas. This image is used as a mask over the webcam input, and the transformed instruction is overlaid on top of the camera feed.
