@@ -4,7 +4,7 @@
 
 import numpy as np
 import cv2
-from InstructionPaper import Instruction
+from .InstructionPaper import Instruction
 
 
 def overlayInstruction(real, instruction):

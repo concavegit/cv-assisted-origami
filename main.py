@@ -5,9 +5,8 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 import pygame
 
 
-import instructionCorner
-import overlayInstruction
-
+import origami_lib.instructionCorner as instructionCorner
+import origami_lib.overlayInstruction as overlayInstruction
 
 class Window(QtWidgets.QMainWindow):
 
@@ -24,7 +23,7 @@ class Window(QtWidgets.QMainWindow):
         self.show()
 
         pygame.mixer.init()
-        pygame.mixer.music.load('Japan.mp3')
+        pygame.mixer.music.load('music/Japan.mp3')
         pygame.mixer.music.play(-1)
 
     def home(self):
@@ -102,11 +101,11 @@ class Window(QtWidgets.QMainWindow):
         samButton.show()
 
     def runSam(self):
-        overlayInstruction.run('CompGenInstructions')
+        overlayInstruction.run('origami_lib/CompGenInstructions')
         self.__init__()
 
     def runFox(self):
-        instructionCorner.run('OrigamiFox')
+        instructionCorner.run('origami_lib/OrigamiFox')
         self.__init__()
 
     def close_appllication(self):
