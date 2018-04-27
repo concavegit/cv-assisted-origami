@@ -28,7 +28,7 @@ The placement of the image of the instruction is done by overlaying the centroid
 
 The final result is this:
 
-![](https://github.com/concavegit/cv-assisted-origami/raw/master/PaperPics/testresult.png)
+![](https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/PaperPics/testresult.png?raw=true)
 
 This method is simple and effective, though it requires the paper to be parallel to the camera as well as a specific rotation.
 
@@ -63,7 +63,7 @@ At this point, the contour that is detected can be compared against the detected
 $$
 s \begin{bmatrix} x'\\y'\\1\end{bmatrix}
 = H \begin{bmatrix}x\\y\\1\end{bmatrix}
-= \begin{bmatrix}h_11 & h_12 & h_13 \\ h_21 & h_22 & h_23\\ h_31 & h_32 & h_33 \end{bmatrix}
+= \begin{bmatrix}h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23}\\ h_{31} & h_{32} & h_{33} \end{bmatrix}
 \begin{bmatrix}x\\y\\1\end{bmatrix}
 $$
 
