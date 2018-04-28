@@ -1,3 +1,4 @@
 pyttsx3
 opencv-python
 PyQt5
+pygame

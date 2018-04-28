@@ -111,7 +111,7 @@ def detection(img, REF):
 
 def run(imgname):
     vc = cv2.VideoCapture(0)
-    img1 = cv2.imread('AR_instructions/' + str(imgname), 0)
+    img1 = cv2.imread('origami_lib/AR_instructions/' + str(imgname), 0)
 
     if vc.isOpened():  # try to get the first frame
         rval, frame = vc.read()
