@@ -1,6 +1,6 @@
 
 
-# Computer Vision Assisted Origami
+# Computer-Vision-Assisted Origami
 [Project Website](https://concavegit.github.io/cv-assisted-origami/)
 
 [![Build Status](https://travis-ci.org/concavegit/cv-assisted-origami.svg?branch=master)](https://travis-ci.org/concavegit/cv-assisted-origami)
