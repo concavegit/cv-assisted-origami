@@ -61,13 +61,23 @@ class InstructUser(Instruction):
     def overlayInstructions(self, frame):
         """Instruction mode 1: Instructinos displayed in the upper
         left corner"""
-
-        img = self.steps[self.stepCounter]
-        # scales image down by about a third
-        res = cv2.resize(img, None, fx=0.7, fy=0.7)
-        frame[0:res.shape[0], 0:res.shape[1]
-              ] = res[0:res.shape[0], 0:res.shape[1]]
-        return frame
+        if self.stepCounter == 0:
+            img = self.steps[self.stepCounter]
+            # scales image down by about a third
+            res = cv2.resize(img, None, fx=0.7, fy=0.7)
+            frame[0:res.shape[0], 0:res.shape[1]] = res[0:res.shape[0], 0:res.shape[1]]
+            return frame
+        else:
+            img = self.steps[self.stepCounter]
+            prevImg = self.steps[self.stepCounter - 1]
+            # scales image and previous image down by about a third
+            res = cv2.resize(img, None, fx=0.6, fy=0.6)
+            resPrev = cv2.resize(prevImg, None, fx=0.3, fy=0.3)
+            frame[0:resPrev.shape[0], 0:resPrev.shape[1]] = resPrev[0:resPrev.shape[0], 0:resPrev.shape[1]]
+            print(res.shape)
+            print(resPrev.shape)
+            frame[0:res.shape[0], resPrev.shape[1]:(resPrev.shape[1] + res.shape[1])] = res[0:res.shape[0], 0:res.shape[1]]
+            return frame
 
     def projectOntoVideo(self):
         """Overlays a jpg of origami instructions onto the frame"""
