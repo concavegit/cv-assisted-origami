@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+'''
+@author: Mark Goldwater
+@date: 2018/04/29
+@brief: These classes display instructions for the folder
+'''
 import sys
 import time
 from PyQt5 import QtWidgets, QtCore, QtGui
