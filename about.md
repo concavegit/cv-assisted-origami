@@ -22,7 +22,7 @@ useful programs his first year at Olin College. He has been interested in OpenCV
 has been happy to engage in a project that utilized the library and apply it to another one of his interests: origami.
 
 ## Sid Garimella
-Sid also has a fair amount of programming, but has taken a liking to the mathematics involved in computer vision. Having researched similar topics prior to joining Olin, the problem of origami state detection appealed greatly to him, and he gladly took on the project. 
+Sid also has a fair amount of programming, but has taken a liking to the mathematics involved in computer vision. Having researched similar topics prior to joining Olin, the problem of origami state detection appealed greatly to him, and he gladly took on the project.
 
 # Credit
 Other than those nerds described up there, there are groups and individuals who have been critical to actualizing our dreams.
