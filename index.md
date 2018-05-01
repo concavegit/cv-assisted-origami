@@ -1,4 +1,5 @@
-![](https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/Videos/Sid.mp4)
+<iframe src="https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/Videos/Sid.mp4"
+width="640" height="360" frameborder="0" ></iframe>
 
 By overlaying instructions realtime onto your sheet of paper, we make following origami instructions more straightforward and clear.
 
@@ -12,7 +13,6 @@ We assume you have [git](https://git-scm.com/) and [python](https://www.python.o
 # Process
 Our group began with two interests: machine learning and computer vision.
 However, as the intersection between the two is either already done or the subject of PhD research, we began to ask what we enjoyed: origami.
-
 
 From that point, we wanted to make instructions easier to follow using computer vision. Traditional origami books are often difficult to interpret/understand, so we wanted our program to make
 doing origami easier and more accessible especially to the beginner. We spent around a week fleshing out this idea, after which we learned a few things from our peers.
