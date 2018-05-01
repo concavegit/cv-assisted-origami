@@ -24,18 +24,6 @@ has been happy to engage in a project that utilized the library and apply it to 
 ## Sid Garimella
 Sid also has a fair amount of programming, but has taken a liking to the mathematics involved in computer vision. Having researched similar topics prior to joining Olin, the problem of origami state detection appealed greatly to him, and he gladly took on the project. 
 
-# Process
-Our group began with two interests: machine learning and computer vision.
-However, as the intersection between the two is either already done or the subject of PhD research, we began to ask what we enjoyed: origami.
-
-
-From that point, we wanted to make instructions easier to follow using computer vision. Traditional origami books are often difficult to interpret/understand, so we wanted our program to make
-doing origami easier and more accessible especially to the beginner. We spent around a week fleshing out this idea, after which we learned a few things from our peers.
-One thing we learned was that we were getting hung up on some way to describe the state of an origami model to use in our program, when really all we needed was a picture of an outline of the desired outcome and a few lines to indicate folds.
-
-We spent another week creating our minimum viable product (MVP) and once again turned to our peers for advice.
-We were then reminded that much of origami is comparing the current step to the next step, and so as a future development we can put a picture of the next instruction in a corner for comparison. These were good ideas, and may implement them in the future.
-
 # Credit
 Other than those nerds described up there, there are groups and individuals who have been critical to actualizing our dreams.
 
