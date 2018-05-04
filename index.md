@@ -1,5 +1,5 @@
 <iframe src="https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/Videos/Sid.mp4"
-width="640" height="360" frameborder="0" ></iframe>
+width="640" height="360" frameborder="0"> </iframe>
 
 By overlaying instructions realtime onto your sheet of paper, we make following origami instructions more straightforward and clear.
 
