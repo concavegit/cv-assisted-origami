@@ -1,7 +1,7 @@
 
 <div class="video" markdown="1">
 <figure>
-<iframe src="https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/Videos/Sid.mp4" width="640" height="360" frameborder="0" ></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cNNFzsZs9_A?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </figure>
 </div>
 
