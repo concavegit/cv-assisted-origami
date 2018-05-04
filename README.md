@@ -49,7 +49,7 @@ Modes:
 
     Follow the instructions described in (2), but fold across the line that is projected over the paper on-screen. Continue folding over new lines as they appear on the paper until lines are no longer visible.
 
-## Implementation Details:
+Check out our website for [implementation details](https://concavegit.github.io/cv-assisted-origami/tech/)
 
 
 ## Contribution guidelines:
