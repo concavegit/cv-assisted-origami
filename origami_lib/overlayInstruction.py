@@ -15,7 +15,12 @@ def overlayInstruction(real, instruction):
     area = computeArea(verts)
     realGray = cv2.cvtColor(real, cv2.COLOR_BGR2GRAY)
     th = cv2.threshold(realGray, 128, 255, cv2.THRESH_BINARY)[1]
-    realVerts = cv2.goodFeaturesToTrack(th, 100, .4, 10)[:, -1]
+    try:
+        realVerts = cv2.goodFeaturesToTrack(th, 100, .4, 10)[:, -1]
+    except TypeError:
+        return real
+    if realVerts.shape[0] < 3:
+        return real
     realArea = computeArea(realVerts)
     scale = np.sqrt(realArea / area)
     resized = resizeInstruction(instruction, scale)
