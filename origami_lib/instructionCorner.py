@@ -56,7 +56,7 @@ class InstructUser(Instruction):
     # Find centroid AND THEN scale image as well as centroid
     def __init__(self, stepDir):
         super().__init__(stepDir)
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture(1)
 
     def overlayInstructions(self, frame):
         """Instruction mode 1: Instructinos displayed in the upper
