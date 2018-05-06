@@ -64,15 +64,15 @@ class InstructUser(Instruction):
         if self.stepCounter == 0:
             img = self.steps[self.stepCounter]
             # scales image down by about a third
-            res = cv2.resize(img, None, fx=0.7, fy=0.7)
+            res = cv2.resize(img, None, fx=0.4, fy=0.4)
             frame[0:res.shape[0], 0:res.shape[1]] = res[0:res.shape[0], 0:res.shape[1]]
             return frame
         else:
             img = self.steps[self.stepCounter]
             prevImg = self.steps[self.stepCounter - 1]
             # scales image and previous image down by about a third
-            res = cv2.resize(img, None, fx=0.6, fy=0.6)
-            resPrev = cv2.resize(prevImg, None, fx=0.3, fy=0.3)
+            res = cv2.resize(img, None, fx=0.4, fy=0.4)
+            resPrev = cv2.resize(prevImg, None, fx=0.25, fy=0.25)
             frame[0:resPrev.shape[0], 0:resPrev.shape[1]] = resPrev[0:resPrev.shape[0], 0:resPrev.shape[1]]
             print(res.shape)
             print(resPrev.shape)
