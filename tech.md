@@ -7,6 +7,8 @@ permalink: /tech/
 
 To assist people with folding origami, we first identified two major challenges inherent to the process: interpretation of instructions, and execution of folds. Individuals who aspire to fold up their own origami creations however, probably wish to execute the folds involved of their own volition, and so we determined the most useful challenge in the space worth addressing dealed directly with the clarification of the fold explanations involved in any particular instruction set.
 
+![](https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/PaperPics/Complicated.jpg?raw=true)
+
 To accomplish this, we designed a mode of assistance that visualizes instructions on or near the paper in the same frame, such that the current state of the paper prior to any given fold instruction can be validated/compared to the instruction set with significantly more ease. The following content provides both a high-level architecture overview and detailed explanations for exactly how we did this.
 
 ## Overview
