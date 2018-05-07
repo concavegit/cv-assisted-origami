@@ -48,19 +48,19 @@ The advanced method builds on top of prior methodologies by providing an augment
 
 A similar, mean-based thresholding process was used for this method to the prior methods. A binary image was produced as output for contour detection.
 
-### Countour detection
+### Contour detection
 
-All the countours that can be extracted from the thresholded image are extracted and sorted into an array by area.
+All the contours that can be extracted from the thresholded image are extracted and sorted into an array by area.
 
 ### Contour filtering
 
 A set of rules was devised to determine whether a contour was "bad" or not. While the process used to determine these rules was extensive and highly based on trial and error, it remains an effective and necessary step for the detection of the paper.
 
-### Countour approximation
+### Contour approximation
 
 For all the remaining "good" contours, a polygon approximation algorithm is executed. Highly irregular shapes produce shapes with a high edge count, and can be detected by using a proportionally small amount of the perimeter for approximation.
 
-### Countour-Instruction verification
+### Contour-Instruction verification
 
 The number of sides of the instruction at a given state is used as a final filter for any remaining contours. The remaining contour, if any, represents a polygonal approximation of the paper.
 
