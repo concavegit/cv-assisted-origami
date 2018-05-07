@@ -5,7 +5,7 @@ permalink: /tech/
 
 ## The Challenge
 
-To assist people with folding origami, we first identified two major challenges inherent to the process: interpretation of instructions, and execution of folds. Individuals who aspire to fold up their own origami creations however, probably wish to execute the folds involved of their own volition, and so we determined the most useful challenge in the space worth addressing dealed directly with the clarification of the fold explanations involved in any particular instruction set.
+To assist people with folding origami, we first identified two major challenges inherent to the process: interpretation of instructions, and execution of folds. Individuals who aspire to fold up their own origami creations however, probably wish to execute the folds involved of their own volition, and so we determined the most useful challenge in the space worth addressing dealt directly with the clarification of the fold explanations involved in any particular instruction set. Below is an example of a complicated and hard to interpret set of instructions.
 
 ![](https://github.com/concavegit/cv-assisted-origami/blob/gh-pages/PaperPics/Complicated.jpg?raw=true)
 
