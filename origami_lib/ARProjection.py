@@ -3,6 +3,7 @@ import cv2
 
 
 def is_contour_bad(img, c):
+    '''Figure out whether a contour is the paper or not.'''
     # approximate the contour
     peri = cv2.arcLength(c, True)
     approx = cv2.approxPolyDP(c, 0.05 * peri, True)
@@ -19,7 +20,7 @@ def is_contour_bad(img, c):
 
 
 def detection(img, REF):
-
+    '''Detect the paper and apply homography.'''
     REFb = REF
     ref_ret, ref_thresh = cv2.threshold(REF, 127, 255, 0)
     ref_img, ref_conts, ref_hiers = cv2.findContours(ref_thresh, 2, 1)
@@ -110,6 +111,8 @@ def detection(img, REF):
 
 
 def run(imgname):
+    '''Run the program on a video'''
+
     vc = cv2.VideoCapture(1)
     img1 = cv2.imread('origami_lib/AR_instructions/' + str(imgname), 0)
 
