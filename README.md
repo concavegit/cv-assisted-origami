@@ -2,6 +2,9 @@
 
 # Computer-Vision-Assisted Origami
 [Project Website](https://concavegit.github.io/cv-assisted-origami/)
+[Project Poster](https://github.com/concavegit/cv-assisted-origami/blob/master/documents/SDP.pdf)
+[Project Video](https://www.youtube.com/watch?v=06_f4uQpBCk)
+
 
 [![Build Status](https://travis-ci.org/concavegit/cv-assisted-origami.svg?branch=master)](https://travis-ci.org/concavegit/cv-assisted-origami)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/concavegit/cv-assisted-origami/blob/master/LICENSE)
