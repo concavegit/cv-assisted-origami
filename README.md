@@ -29,7 +29,7 @@ To obtain the following dependencies, simply run `pip install -r REQUIREMENTS.tx
 ## Quick start:
 
 To run this software, execute main.py by typing `./main.py` in the cv-assisted-origami directory, and you should
-be presented with the following GUI
+be presented with the following GUI.
 
 ## Usage:
 Before running the program, it is necessary to set up an external webcam so that it faces downward at a table. This is where
