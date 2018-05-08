@@ -66,6 +66,7 @@ def overlayInstruction(real, instruction):
 
 
 def sortVerts(verts):
+    '''Sort vertices in clockwise order.'''
     centroid = verts.mean(0)
     d = verts - centroid
     an = (np.arctan2(d[:, 0], d[:, 1]) + 2 * np.pi) % (2 * np.pi)
@@ -75,6 +76,7 @@ def sortVerts(verts):
 
 
 def computeArea(verts):
+    '''Compute area using the shoelace formula.'''
     verts = sortVerts(verts)
     rolled = np.roll(verts, -1, 0)
     shoelace = verts[:, 0] * rolled[:, 1]\
@@ -83,11 +85,13 @@ def computeArea(verts):
 
 
 def resizeInstruction(instruction, scale):
+    '''Resize the instruction image based on a scale.'''
     dim = np.int0(scale * np.float64(instruction.shape))[:-1]
     return cv2.resize(instruction, (dim[1], dim[0]))
 
 
 def overlayVideo(cap, directory):
+    '''Overlay the instructions on a video'''
     x = Instruction(directory)
     while x.running:
         ret, frame = cap.read()
@@ -101,8 +105,13 @@ def overlayVideo(cap, directory):
 
 
 def run(directory):
-    cap = cv2.VideoCapture(1)
-    overlayVideo(cap, directory)
+    '''Run the overlayVideo on a video device.'''
+    try:
+        cap = cv2.VideoCapture(1)
+        overlayVideo(cap, directory)
+    except cv2.error:
+        cap = cv2.VideoCapture(0)
+        overlayVideo(cap, directory)
 
 
 if __name__ == '__main__':
